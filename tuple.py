@@ -20,6 +20,11 @@ def create_tuple():
     my_tuple_4 = tuple(("coller", "sean"))
     print (my_tuple_4)
 
+def tuple_to_list():
+    t = ("hellen", "nadia")
+    print (t)
+    print (list(t))
 
-create_tuple()
+tuple_to_list()
+# create_tuple()
 

@@ -20,10 +20,22 @@ def pop_append_arr():
     print ("arrays handling with pop/append:")
     numbers = [1, 2, 3, 4, 5, 6, 7]
     new_numbers = []
+    print ("numbers:", numbers)
+    numbers.append(8)
+    print ("numbers.append(8):", numbers)
     while numbers:
         val = numbers.pop()
         new_numbers.append(val)
-    print (new_numbers)
+    print ("all numbers poped:", numbers)
+    print ("appended to new_numbers:", new_numbers)
+
+    # 2d array due to append array
+    numbers.append(new_numbers)
+    print ("numbers.append(new_numbers):", numbers) 
+
+    # adding array elements
+    numbers.extend(new_numbers)
+    print ("numbers.extend(new_numbers):", numbers) 
 
 def copy_arr():
     print ("copy arrays: ")
@@ -64,10 +76,32 @@ def index_method():
     names = ["sean", "patty", "john"]
     print (names.index("patty"))
     
+def list_2d():
+    matrix = [[1,2,3], [4,5,6], [7,8,9]]
+    for i in matrix:
+        print (i)
+    for i in matrix:
+        for j in i:
+            print (j)
+
+# zip(a, b) : pick out two elements from two list and return them as tuple
+def use_zip():
+    list1 = [1,2,3]
+    list2 = [4,5,6]
+    for t in zip(list1, list2):
+        print ("t:", t)
+
+def use_list():
+    str = "0123456"
+    print (list(str))
+
+use_list()
+# use_zip()
 # create_list()
 # del_arr()
 # pop_append_arr()
 # copy_arr()
 # search_element()
 # slice_operator()
-index_method()
+# index_method()
+# list_2d()

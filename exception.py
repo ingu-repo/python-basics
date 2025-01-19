@@ -1,16 +1,42 @@
-
+#
+# Even though exception occured, finally will be performed
+#
 def run_exception(call_back):
     try:
         return call_back()
-    except ZeroDivisionError:
-        print ("ZeroDivisionError")
+    except ZeroDivisionError as e:
+        print (e)
+        print (type(e))
+        print (e.args)
     except NameError: 
         print("NameError") 
     except ValueError:
         print("ValueError") 
-    except:
-        print ("unknown exception")
+    except Exception as e:
+        print ("Exception occured")
+        print (e)
+    else:
+        print ("else")
+    finally:
+        print ("finally")
     print ("")
+
+def missing_except():
+    try:
+        raise TypeError("type error", "ng")
+    except NameError as e:
+        print (e)
+
+def finally_with_return():
+    try:
+        for i in range(3):
+            print (i)
+            return
+        print ("process done")
+    except:
+        print ("except")
+    finally:
+        print ("finally")
 
 def zero_divide():
     print ("run: 5 / 0")
@@ -22,10 +48,16 @@ def invalid_type():
 
 def raise_exception():
     print ("run: raise Exception")
-    raise Exception("unknown exception")
+    raise Exception("oh no")
 
-run_exception(zero_divide)
-run_exception(invalid_type)
-run_exception(raise_exception)
+def run_ok():
+    print ("ok")
+
+# run_exception(zero_divide)
+# run_exception(invalid_type)
+# run_exception(raise_exception)
+# run_exception(run_ok)
+# missing_except()
+finally_with_return()
 
 print ("Done")
