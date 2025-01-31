@@ -95,7 +95,7 @@ def use_list():
     str = "0123456"
     print (list(str))
 
-use_list()
+# use_list()
 # use_zip()
 # create_list()
 # del_arr()
@@ -105,3 +105,14 @@ use_list()
 # slice_operator()
 # index_method()
 # list_2d()
+
+def search_element():
+    nums = [0, 1, 2, 3, 4, 5]
+    print ("nums:", nums)
+
+    if 10 not in nums:
+        print ("10 is not in nums")
+    else :
+        print ("10 exists in nums")
+
+search_element()

@@ -26,6 +26,14 @@ f = lambda a, b : a + b
 print (f(1, 2))
 ```
 
+### Function Parameters
+* '*'  : receive parameter as tuple
+* '**' : receive parameter as map
+```
+f = lambda a, b : a + b
+print (f(1, 2))
+```
+
 ### General
 *from PACKAGE import \**
 > it can import all module names ONLY for the names not starting with _ (underscore)

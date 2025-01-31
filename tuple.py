@@ -25,6 +25,17 @@ def tuple_to_list():
     print (t)
     print (list(t))
 
-tuple_to_list()
+# tuple_to_list()
 # create_tuple()
+
+def change_tuple():
+    x = ([0,1], [2,3])
+    x[0][0] = 'changed'     # ok to change because chaing list not tuple itself
+    print (x)
+
+    y = (1,2,3)
+    y[0] = "can't changed"  # runtime error due to tupel is immutable
+    print (y)
+
+change_tuple()
 

@@ -8,8 +8,8 @@ def run_exception(call_back):
         print (e)
         print (type(e))
         print (e.args)
-    except NameError: 
-        print("NameError") 
+    except (NameError, IndexError): 
+        print("NameError or IndexError") 
     except ValueError:
         print("ValueError") 
     except Exception as e:
@@ -53,11 +53,26 @@ def raise_exception():
 def run_ok():
     print ("ok")
 
-# run_exception(zero_divide)
+run_exception(zero_divide)
 # run_exception(invalid_type)
 # run_exception(raise_exception)
 # run_exception(run_ok)
 # missing_except()
-finally_with_return()
+# finally_with_return()
 
-print ("Done")
+class TestError(Exception):
+    # print ("TestError occurred")
+    pass
+
+def run_a():
+    try:
+        run_b()
+    except TestError:
+        print ("run_a(): exception occurred")
+
+def run_b():
+    print ("run_b(): started")
+    raise TestError
+
+run_a()
+

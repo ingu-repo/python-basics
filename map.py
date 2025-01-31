@@ -18,6 +18,12 @@ def check_not_in():
     print ("sean" not in users.keys())
     print (99 not in users.values())
 
+def create_map_simply():
+    m = {i: i*2 -1 for i in [1,2,3]}
+    print (m)
+    
 loop_map()
 override_map()
 check_not_in()
+create_map_simply()
+
