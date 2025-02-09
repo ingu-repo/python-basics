@@ -1,6 +1,12 @@
+# ----------------------------------------------------------
 #
-# Even though exception occured, finally will be performed
+# Finally
+#  - even though exception occured, finally will be performed
 #
+# Args
+#  - When exception occured, the exception params are set as Tuple. Not hashmap
+#
+# ----------------------------------------------------------
 def run_exception(call_back):
     try:
         return call_back()
